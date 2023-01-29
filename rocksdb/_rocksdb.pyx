@@ -2332,8 +2332,8 @@ cdef class BackupEngine(object):
 
         c_backup_dir = path_to_string(backup_dir)
         st = backup.BackupEngine_Open(
-            env.Env_Default(),
             backup.BackupEngineOptions(c_backup_dir),
+            env.Env_Default(),
             cython.address(self.engine))
 
         check_status(st)
